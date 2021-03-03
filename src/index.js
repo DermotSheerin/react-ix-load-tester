@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom"; // eslint-disable-next-line
+import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import ChatStats from "./components/chatStats";
+import SiteHeader from "./components/siteHeader";
+import ChatParameters from "./components/chatParameters";
+import ChatStatsPage from "./components/pages/chatStatsPage";
+import ChatParametersPage from "./components/pages/chatParametersPage";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// In general, the top component in an app's component hierarchy is primarily concerned with routing
+const App = () => {
+  // The exact param disables the partial matching for a route and makes sure that it only returns the route if the path is an EXACT match to the current url.
+  // The App component composes the MoviesContextProvider with 'the rest of our components'. This means all components can now access the values contained in the context associated with the MoviesContextProvider component
+
+  return (
+    <BrowserRouter>
+        <div className="jumbotron">
+          <SiteHeader /> {/* New Header  */}
+          <div className="container">
+                  <Switch>
+                    <Route path="/chatParameters" component={ChatParametersPage} />
+                    <Route path="/" component={ChatStatsPage} />
+                    <Redirect from="*" to="/" />
+                  </Switch>
+          </div>
+        </div>
+    </BrowserRouter>
+  );
+
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));
