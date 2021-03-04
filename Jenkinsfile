@@ -9,7 +9,7 @@ pipeline {
 		stage('Deploy') {
             steps {
 				sh 'docker-compose build'
-				sh 'docker-compose up -d'
+				sh 'docker-compose run -d'
             }
         }
     }
