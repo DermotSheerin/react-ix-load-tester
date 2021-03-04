@@ -1,7 +1,8 @@
-version: '3.3'
+version: '3.7'
 services:
   chatgenerator:
     build: .
     container_name: reactFrontEnd
     ports: 
       - "3001:3001"
+    stdin_open: true
