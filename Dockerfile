@@ -7,7 +7,8 @@ EXPOSE 3001
 CMD [ "npm", "start" ]
 
 FROM nginx:1.15.2-alpine
-COPY --from=build /app/build /usr/share/nginx/html
+WORKDIR /usr/src/app
+COPY --from=build /usr/src/app/build /usr/share/nginx/html
 #COPY nginx.conf /etc/nginx/nginx.conf
 #EXPOSE 80
 #ENTRYPOINT ["nginx","-g","daemon off;"]
