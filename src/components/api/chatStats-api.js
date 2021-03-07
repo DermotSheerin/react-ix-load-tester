@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const baseIP = "10.134.45.26"
+// const baseIP = "10.134.45.26"
+// const port = 8000;
+
+const baseIP = "localhost"
 const port = 8000;
 
-// const baseIP = "localhost"
-// const port = 8000;
-//
 
 const config = {
   headers: {
