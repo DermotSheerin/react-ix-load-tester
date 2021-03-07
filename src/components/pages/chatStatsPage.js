@@ -1,11 +1,12 @@
 import React from "react";
 import useChatStats from '../hooks/useChatStats'
 import ChatStats from '../../components/chatStats'
+import WebsocketStats from "../websocketStats"
 //import ToggleStartButton from "../buttons/toggleStartButton";
 
 
 const ChatStatsPage = () => {
-  const [chatStats] = useChatStats();
+  const [chatStats] = WebsocketStats();
   console.log(`Here is complete stats in ChatStats component${chatStats}`)
  
 

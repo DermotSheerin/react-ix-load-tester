@@ -1,11 +1,13 @@
 import React from "react";
 import StartButton from "../buttons/startButton";
 import StopButton from "../buttons/stopButton";
+import WebsocketStats from "../websocketStats";
 //import useChatStats from '../hooks/useChatStats'
 //import ToggleStartButton from "../buttons/toggleStartButton";
 
 
 const ChatStats = ({chatStats}) => {
+  console.log(chatStats)
 
     return (
       <>

@@ -1,30 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {useForm} from "react-hook-form";
 import {changeChatParameters} from "../api/chatStats-api"
-import socketIOClient from "socket.io-client";
 //import useChangeChatParameters from "../hooks/useChangeChatParameters"
 //import useChatParameters from '../hooks/useChatParameters'
 
 
 const ChatParameters = ({chatParameters}) => {
-
-  ////////////////////
-  
-  const ENDPOINT = "http://localhost:8000/";
-
-  const [response, setResponse] = useState("");
-
-  useEffect(() => {
-    const socket = socketIOClient(ENDPOINT);
-    socket.on("FromAPI", data => {
-      setResponse(data);
-    });
-  }, []);
-
-  console.log(`in useEFfect, here is response: ${response}`)
-
-  ////////////////////
-
   const [concurrentCallers, setConcurrentCallers] = useState(chatParameters.data.concurrentCallers);
   const [chatSendMax, setChatSendMax] = useState(chatParameters.data.chatSendMax);
   const [firstMsgSendDelay, setFirstMsgSendDelay] = useState(chatParameters.data.firstMsgSendDelay);
@@ -55,9 +36,6 @@ const ChatParameters = ({chatParameters}) => {
 
   return (
     <>
-        <p>
-            It's {response}
-      	</p>
         <form
           className="form bg-dark text-light"
           onSubmit={handleSubmit(onSubmit)}
