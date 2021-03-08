@@ -8,8 +8,7 @@ import WebsocketStats from "../websocketStats"
 const ChatStatsPage = () => {
   // retrieve chatStats retrieved from the server using SocketIO
   const [chatStats] = WebsocketStats();
-  console.log(`Here is complete stats in ChatStats component${chatStats}`)
- 
+
 
     return chatStats ?   (
         <ChatStats chatStats={chatStats} /> 
