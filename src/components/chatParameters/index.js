@@ -12,7 +12,7 @@ const ChatParameters = ({chatParameters}) => {
   const [respondMsgDelay, setRespondMsgDelay] = useState(chatParameters.data.respondMsgDelay);
   const [delayBetweenLoops, setDelayBetweenLoops] = useState(chatParameters.data.delayBetweenLoops);
   const [agentJoinTimeout, setAgentJoinTimeout] = useState(chatParameters.data.agentJoinTimeout);
-  const [agentSendsBye, setAgentSendsBye] = useState(chatParameters.data.agentSendsBye);
+  //const [agentSendsBye, setAgentSendsBye] = useState(chatParameters.data.agentSendsBye);
   // const [customerMsgText, setCustomerMsgText] = useState("");
   // const [customerBye, setCustomerBye] = useState("");
 
@@ -27,11 +27,18 @@ const ChatParameters = ({chatParameters}) => {
   //const { from } = user.location.state || { from: { pathname: "/" } };
 
 
+  // const onSubmit = async () => {
+  //   const data = {concurrentCallers:concurrentCallers, chatSendMax:chatSendMax,firstMsgSendDelay:firstMsgSendDelay,respondMsgDelay:respondMsgDelay,
+  //     delayBetweenLoops: delayBetweenLoops, agentJoinTimeout:agentJoinTimeout, agentSendsBye:agentSendsBye }
+  //   changeChatParameters(data)
+  //   console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, delayBetweenLoops, agentJoinTimeout, agentSendsBye)
+  // }
+
   const onSubmit = async () => {
     const data = {concurrentCallers:concurrentCallers, chatSendMax:chatSendMax,firstMsgSendDelay:firstMsgSendDelay,respondMsgDelay:respondMsgDelay,
-      delayBetweenLoops: delayBetweenLoops, agentJoinTimeout:agentJoinTimeout, agentSendsBye:agentSendsBye }
+      delayBetweenLoops: delayBetweenLoops, agentJoinTimeout:agentJoinTimeout }
     changeChatParameters(data)
-    console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, delayBetweenLoops, agentJoinTimeout, agentSendsBye)
+    console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, delayBetweenLoops, agentJoinTimeout)
   }
 
   return (
@@ -84,7 +91,7 @@ const ChatParameters = ({chatParameters}) => {
               })}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>
               Agent Sends Bye (true/false)
             </label>
@@ -105,7 +112,7 @@ const ChatParameters = ({chatParameters}) => {
                 },
               })}
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label>
               Delay prior to Sending First Chat Message (ms)

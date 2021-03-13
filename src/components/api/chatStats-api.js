@@ -3,7 +3,7 @@ import axios from 'axios';
 // const baseIP = "10.134.45.26"
 // const port = 8000;
 
-export const baseIP = "localhost"
+export const baseIP = "135.123.73.56"
 export const port = 8000;
 
 
@@ -50,7 +50,7 @@ const config = {
 
   export const changeChatParameters = async (data) => {
     return await axios.post(
-      `http://${baseIP}:${port}/changeChatParameters/`, JSON.stringify(data), config
+      `http://${baseIP}:${port}/changeChatParameters`, JSON.stringify(data), config
     )
   };
 
