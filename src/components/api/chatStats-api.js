@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-// const baseIP = "10.134.45.26"
-// const port = 8000;
+const baseIP = "10.134.45.26"
+const port = 8000;
 
-export const baseIP = "135.123.73.56"
-export const port = 8000;
+// export const baseIP = "192.168.178.55"
+// export const port = 8000;
 
 
 const config = {

@@ -1,15 +1,36 @@
 import React from "react";
 import StartButton from "../buttons/startButton";
 import StopButton from "../buttons/stopButton";
+import "./index.css";
 //import useChatStats from '../hooks/useChatStats'
 //import ToggleStartButton from "../buttons/toggleStartButton";
 
 
 const ChatStats = ({chatStats}) => {
-  console.log(chatStats)
 
     return (
       <>
+      <h2 className="table-space">Resource Usage</h2>
+      <div>
+      <table className="table table-striped">
+          <thead>
+          <tr>
+              <th scope="col">Resource</th>      
+              <th scope="col">Current Value</th>  
+          </tr>
+          </thead>
+          <tbody>         
+          {Object.entries(chatStats.resourceStats).map(([key, value]) =>
+            <tr key={key}>
+              <th>{key}</th>
+              <td>{value}</td>                 
+            </tr>
+              )}             
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="table-space">Chat Generator Statistics </h2>
       <div>
         <table className="table table-striped">
           <thead>
@@ -20,7 +41,7 @@ const ChatStats = ({chatStats}) => {
           </tr>
           </thead>
           <tbody>         
-          {Object.entries(chatStats).map(([key, value]) =>
+          {Object.entries(chatStats.chatStatsMap).map(([key, value]) =>
             <tr key={key}>
               <th>{key}</th>
               <td>{value[0]}</td>

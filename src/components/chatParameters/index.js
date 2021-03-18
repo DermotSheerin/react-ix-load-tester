@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
 import {changeChatParameters} from "../api/chatStats-api"
+import "./index.css"
 //import useChangeChatParameters from "../hooks/useChangeChatParameters"
 //import useChatParameters from '../hooks/useChatParameters'
 
@@ -44,7 +45,7 @@ const ChatParameters = ({chatParameters}) => {
   return (
     <>
         <form
-          className="form bg-dark text-light"
+          className="form bg-dark text-light table-space"
           onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-center">Chat Generator Parameters</h2>
