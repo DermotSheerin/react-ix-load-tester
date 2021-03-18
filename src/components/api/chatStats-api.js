@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseIP = "10.134.45.26"
+export const baseIP = "127.0.0.1"
 export const port = 8000;
 
 // export const baseIP = "192.168.178.55"
