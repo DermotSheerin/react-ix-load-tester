@@ -3,9 +3,9 @@ import axios from 'axios';
 const baseIP = "10.134.45.26"
 const port = 8000;
 
-// const baseIP = "localhost"
-// const port = 8000;
-//
+// export const baseIP = "192.168.178.55"
+// export const port = 8000;
+
 
 const config = {
   headers: {
@@ -28,11 +28,13 @@ const config = {
   //     .then((json) => json.results);
   // };
 
-  export const getStats = async () => {
-    return await axios.get(
-      `http://${baseIP}:${port}/getStats`
-    )
-  };
+
+  // removed and now using websockets via socket.io
+  // export const getStats = async () => {
+  //   return await axios.get(
+  //     `http://${baseIP}:${port}/getStats`
+  //   )
+  // };
 
   export const startTest = async () => {
     return await axios.get(
@@ -48,7 +50,7 @@ const config = {
 
   export const changeChatParameters = async (data) => {
     return await axios.post(
-      `http://${baseIP}:${port}/changeChatParameters/`, JSON.stringify(data), config
+      `http://${baseIP}:${port}/changeChatParameters`, JSON.stringify(data), config
     )
   };
 

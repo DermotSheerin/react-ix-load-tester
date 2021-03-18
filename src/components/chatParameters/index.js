@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import {useForm} from "react-hook-form";
 import {changeChatParameters} from "../api/chatStats-api"
+import "./index.css"
 //import useChangeChatParameters from "../hooks/useChangeChatParameters"
 //import useChatParameters from '../hooks/useChatParameters'
 
 
 const ChatParameters = ({chatParameters}) => {
-
   const [concurrentCallers, setConcurrentCallers] = useState(chatParameters.data.concurrentCallers);
   const [chatSendMax, setChatSendMax] = useState(chatParameters.data.chatSendMax);
   const [firstMsgSendDelay, setFirstMsgSendDelay] = useState(chatParameters.data.firstMsgSendDelay);
   const [respondMsgDelay, setRespondMsgDelay] = useState(chatParameters.data.respondMsgDelay);
   const [delayBetweenLoops, setDelayBetweenLoops] = useState(chatParameters.data.delayBetweenLoops);
   const [agentJoinTimeout, setAgentJoinTimeout] = useState(chatParameters.data.agentJoinTimeout);
-  const [agentSendsBye, setAgentSendsBye] = useState(chatParameters.data.agentSendsBye);
+  //const [agentSendsBye, setAgentSendsBye] = useState(chatParameters.data.agentSendsBye);
   // const [customerMsgText, setCustomerMsgText] = useState("");
   // const [customerBye, setCustomerBye] = useState("");
 
@@ -28,17 +28,24 @@ const ChatParameters = ({chatParameters}) => {
   //const { from } = user.location.state || { from: { pathname: "/" } };
 
 
+  // const onSubmit = async () => {
+  //   const data = {concurrentCallers:concurrentCallers, chatSendMax:chatSendMax,firstMsgSendDelay:firstMsgSendDelay,respondMsgDelay:respondMsgDelay,
+  //     delayBetweenLoops: delayBetweenLoops, agentJoinTimeout:agentJoinTimeout, agentSendsBye:agentSendsBye }
+  //   changeChatParameters(data)
+  //   console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, delayBetweenLoops, agentJoinTimeout, agentSendsBye)
+  // }
+
   const onSubmit = async () => {
     const data = {concurrentCallers:concurrentCallers, chatSendMax:chatSendMax,firstMsgSendDelay:firstMsgSendDelay,respondMsgDelay:respondMsgDelay,
-      delayBetweenLoops: delayBetweenLoops, agentJoinTimeout:agentJoinTimeout, agentSendsBye:agentSendsBye }
+      delayBetweenLoops: delayBetweenLoops, agentJoinTimeout:agentJoinTimeout }
     changeChatParameters(data)
-    console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, delayBetweenLoops, agentJoinTimeout, agentSendsBye)
+    console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, delayBetweenLoops, agentJoinTimeout)
   }
 
   return (
     <>
         <form
-          className="form bg-dark text-light"
+          className="form bg-dark text-light table-space"
           onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-center">Chat Generator Parameters</h2>
@@ -85,7 +92,7 @@ const ChatParameters = ({chatParameters}) => {
               })}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>
               Agent Sends Bye (true/false)
             </label>
@@ -106,7 +113,7 @@ const ChatParameters = ({chatParameters}) => {
                 },
               })}
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label>
               Delay prior to Sending First Chat Message (ms)
