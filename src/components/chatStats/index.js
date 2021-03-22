@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import StartButton from "../buttons/startButton";
 import StopButton from "../buttons/stopButton";
 import "./index.css";
@@ -16,16 +16,18 @@ const ChatStats = ({chatStats}) => {
           <thead>
           <tr>
               <th scope="col">Resource</th>      
-              <th scope="col">Current Value</th>  
+              <th scope="col">Current Value</th>
+              <th scope="col">Peak Value</th>  
           </tr>
           </thead>
           <tbody>         
           {Object.entries(chatStats.resourceStats).map(([key, value]) =>
             <tr key={key}>
               <th>{key}</th>
-              <td>{value}</td>                 
+              <td>{value[0]}</td>
+              <td>{value[1]}</td>                 
             </tr>
-              )}             
+              )}              
           </tbody>
         </table>
       </div>

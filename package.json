@@ -18,6 +18,7 @@
     "react-scripts": "3.4.0",
     "react-strap": "0.0.1",
     "reactstrap": "^8.5.1",
+    "semantic-ui-react": "^2.0.3",
     "socket.io-client": "^3.1.2"
   },
   "scripts": {
