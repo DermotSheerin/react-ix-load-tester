@@ -2,14 +2,17 @@ import React, {useState} from "react";
 import StartButton from "../buttons/startButton";
 import StopButton from "../buttons/stopButton";
 import "./index.css";
+import ResourceChart from "../resourceChart"
 //import useChatStats from '../hooks/useChatStats'
 //import ToggleStartButton from "../buttons/toggleStartButton";
 
 
-const ChatStats = ({chatStats}) => {
+const ChatStats = ({chatStats, usedMem}) => {
+  console.log(chatStats)
 
     return (
       <>
+      <ResourceChart usedMem={usedMem}/>
       <h2 className="table-space">Resource Usage</h2>
       <div>
       <table className="table table-striped">

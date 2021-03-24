@@ -1,0 +1,125 @@
+import React, { useState, useEffect  } from "react";
+import { Line } from "react-chartjs-2";
+
+// https://nagix.github.io/chartjs-plugin-streaming/
+// https://www.youtube.com/watch?v=A5KaLpqzRi4
+// https://stackoverflow.com/questions/58382572/graph-streaming-real-time-data-with-react-and-chartjs
+
+const ResourceChart = () => {
+    const [resourceChart, setResourceChart] = useState();
+
+
+const currentTime = () => {
+    const minutes = new Date().getMinutes();
+    const hours = new Date().getHours() ;
+    const seconds = new Date().getSeconds();
+    return `${hours}:${minutes}:${seconds}`
+
+}
+
+// const chart = {
+//     datasets: [
+//       {
+//         label: "Dataset 1",
+//         borderColor: "rgb(255, 99, 132)",
+//         backgroundColor: "rgba(255, 99, 132, 0.5)",
+//         lineTension: 0,
+//         borderDash: [8, 4],
+//         data: []
+//       }
+//     ]
+//   };
+
+    const chart = () => {
+        setResourceChart({
+            labels: ["monday","tuesday", "wednesday", "thursday", "friday"],
+            datasets: [ 
+                {
+                label: "First label",
+                // data: [12, 25, 50, 75, 88],
+                data: [],
+                backgroundColor: [
+                    "rgba(75, 192, 192, 0.6)"
+                ],
+                borderWidth: 40 
+            }
+        ]
+        })
+    };
+
+    // const options = {
+    //     scales: {
+    //       xAxes: [
+    //         {
+    //           type: "realtime",
+    //           realtime: {
+    //             onRefresh: function() {
+    //                 chart.datasets[0].data.push({
+    //                 x: Date.now(),
+    //                 y: Math.random() * 100
+    //               });
+    //             },
+    //             delay: 2000
+    //           }
+    //         }
+    //       ]
+    //     }
+    //   };
+    
+    const options = {
+        responsive: true,
+        title: {text: "Line tile", display: true},
+        scales: {
+            yAxes: [{
+                ticks: {
+                    autoSkip: true,
+                    maxTicksLimit: 100,
+                    beginAtZero: true
+                },
+                gridLines: {
+                    display: false
+                }
+            }],
+            xAxes: [{
+                // ticks: {
+                //     callback: function(value) { 
+                //         // return new Date().toLocaleDateString({month:'short', year:'numeric'}); 
+                //         return currentTime();   
+                //     },
+                // },
+                gridLines: {
+                    display: false
+                },
+                // realtime: {
+                //     onRefresh: function(chart) {
+                //         resourceChart.datasets.forEach(function(dataset) {
+                //         dataset.data.push({
+                //           x: currentTime(),
+                //           y: Math.random()
+                //         });
+                //       });
+                //     },
+                //     delay: 2000
+                //   }                
+            }]
+        }
+    };
+  
+    useEffect(() => {
+        chart()
+
+    }, []);
+
+    return(
+        <div>
+            <h1>Chart Test</h1>
+            <div>
+                <Line data={resourceChart} options={options}
+                />
+            </div>
+
+        </div>
+    )
+  };
+  
+  export default ResourceChart;

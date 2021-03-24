@@ -7,6 +7,7 @@ import SiteHeader from "./components/siteHeader";
 import ChatParameters from "./components/chatParameters";
 import ChatStatsPage from "./components/pages/chatStatsPage";
 import ChatParametersPage from "./components/pages/chatParametersPage";
+import ResourceChart from "./components/resourceChart/index";
 
 
 // In general, the top component in an app's component hierarchy is primarily concerned with routing
@@ -21,6 +22,7 @@ const App = () => {
           <div className="container">
                   <Switch>
                     <Route path="/chatParameters" component={ChatParametersPage} />
+                    {/* <Route path="/resourceChart" component={ResourceChart} /> */}
                     <Route path="/" component={ChatStatsPage} />
                     <Redirect from="*" to="/" />
                   </Switch>
