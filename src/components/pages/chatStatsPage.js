@@ -8,7 +8,6 @@ import WebsocketStats from "../websocketStats";
 const ChatStatsPage = () => {
   // retrieve chatStats retrieved from the server using SocketIO
   const [chatStats, usedMem] = WebsocketStats();
-  console.log(typeof usedMem)
 
 
     return chatStats ?   (

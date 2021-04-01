@@ -8,8 +8,8 @@ import ResourceChart from "../resourceChart"
 
 
 const ChatStats = ({chatStats, usedMem}) => {
-  console.log(chatStats)
-
+  //console.log(`React version: ${React.version} `);
+  
     return (
       <>
       <ResourceChart usedMem={usedMem}/>
