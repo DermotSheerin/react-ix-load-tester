@@ -12,6 +12,10 @@ const ChatStats = ({chatStats, usedMem}) => {
   
     return (
       <>
+      <h2>Events Received: { chatStats.eventCounter } </h2>
+      <h2>First Caller In: { chatStats.testTime.startTime } </h2>
+      <h2>Last Caller In: { chatStats.testTime.stopTime } </h2>
+
       <ResourceChart usedMem={usedMem}/>
       <h2 className="table-space">Resource Usage</h2>
       <div>
