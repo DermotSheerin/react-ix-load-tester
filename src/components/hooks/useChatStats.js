@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getStats } from "../api/chatStats-api";
 
+// no longer needed as now using webhooks
 const useChatStats = () => {
   // const [chatStats, setChatStats] = useState(null);
   // useEffect(() => {

@@ -7,11 +7,12 @@ import WebsocketStats from "../websocketStats";
 
 const ChatStatsPage = () => {
   // retrieve chatStats retrieved from the server using SocketIO
-  const [chatStats, usedMem] = WebsocketStats();
+  const [chatStats, graphData] = WebsocketStats();
+
 
 
     return chatStats ?   (
-         <ChatStats chatStats={chatStats} usedMem={usedMem} /> 
+         <ChatStats chatStats={chatStats} graphData={graphData} /> 
     ) :
     <h3>IX Chat Stats Not Available Yet .....please ensure nodeJS Generator is running</h3>
 

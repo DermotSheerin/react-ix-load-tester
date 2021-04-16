@@ -1,11 +1,15 @@
 import axios from 'axios';
+import FrameworkChoice from '../frameworkChoice'
 
-export const baseIP = "135.123.64.43"
-export const port = 8001;
+export const baseIP = "135.123.64.84"
+export const port = "8001"
 
-// export const baseIP = "192.168.178.55"
-// export const port = 8000;
+// export const expressPort = 8001;
+// export const fastifyPort = 8002;
+// export let port = FrameworkChoice.framework;
+// FrameworkChoice.framework === "Fastify" ? port = fastifyPort : port = expressPort;
 
+console.log(`React using port: ${port}`)
 
 const config = {
   headers: {

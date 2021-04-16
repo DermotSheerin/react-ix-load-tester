@@ -7,8 +7,8 @@ import ResourceChart from "../resourceChart"
 //import ToggleStartButton from "../buttons/toggleStartButton";
 
 
-const ChatStats = ({chatStats, usedMem}) => {
-  //console.log(`React version: ${React.version} `);
+const ChatStats = ({chatStats, graphData }) => {
+
   
     return (
       <>
@@ -16,7 +16,7 @@ const ChatStats = ({chatStats, usedMem}) => {
       <h2>First Caller In: { chatStats.testTime.startTime } </h2>
       <h2>Last Caller In: { chatStats.testTime.stopTime } </h2>
 
-      <ResourceChart usedMem={usedMem}/>
+      <ResourceChart graphData={graphData} />
       <h2 className="table-space">Resource Usage</h2>
       <div>
       <table className="table table-striped">
@@ -53,8 +53,9 @@ const ChatStats = ({chatStats, usedMem}) => {
           {Object.entries(chatStats.chatStatsMap).map(([key, value]) =>
             <tr key={key}>
               <th>{key}</th>
-              <td>{value[0]}</td>
-              <td>{value[1]}</td>                   
+              {/* user ternary operator to change select className based on pass/fail */}
+              <td className={`${value[0] >= 1 ? "green-highlight" : ""}`}>{value[0]}</td>
+              <td className={`${value[1] >= 1 ? "red-highlight" : ""}`}>{value[1]}</td>  
             </tr>
               )}             
           </tbody>

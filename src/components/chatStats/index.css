@@ -1,3 +1,18 @@
 .table-space {
     margin-top: 30px;
   }
+
+.red-highlight {
+  color: white;
+  background: red;
+}
+
+.green-highlight {
+  color: white;
+  background: green;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between 
+}

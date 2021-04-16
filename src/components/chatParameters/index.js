@@ -7,6 +7,7 @@ import "./index.css"
 
 
 const ChatParameters = ({chatParameters}) => {
+  const [framework] = useState(chatParameters.data.framework);
   const [concurrentCallers, setConcurrentCallers] = useState(chatParameters.data.concurrentCallers);
   const [chatSendMax, setChatSendMax] = useState(chatParameters.data.chatSendMax);
   const [firstMsgSendDelay, setFirstMsgSendDelay] = useState(chatParameters.data.firstMsgSendDelay);
@@ -44,11 +45,13 @@ const ChatParameters = ({chatParameters}) => {
 
   return (
     <>
+    {/* <FrameworkChoice></FrameworkChoice> */}
         <form
           className="form bg-dark text-light table-space"
           onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-center">Chat Generator Parameters</h2>
+          <h3 className="text-left">Framework in test: {framework} </h3>
           <div className="form-group">
             <label>
               Number of Concurrent Callers
