@@ -51,7 +51,7 @@ const ChatParameters = ({chatParameters}) => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-center">Chat Generator Parameters</h2>
-          <h3 className="text-left">Framework in test: {framework} </h3>
+          <h3 className="text-highlight">Framework: {framework} </h3>
           <div className="form-group">
             <label>
               Number of Concurrent Callers
@@ -75,7 +75,7 @@ const ChatParameters = ({chatParameters}) => {
           </div>
           <div className="form-group">
             <label>
-              Number of Chat Messages per Interaction
+              Number of Chat Messages per Interaction (does not include agent BYE message to end interaction)
             </label>
             <input
               type="number"

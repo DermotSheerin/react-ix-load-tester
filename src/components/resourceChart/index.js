@@ -22,6 +22,7 @@ const ResourceChart = ({graphData}) => {
 
   return (
     <div>
+      <h2 className="table-space">Resource Graph </h2>
         <AreaChart
         width={1100}
         height={400}
@@ -34,7 +35,7 @@ const ResourceChart = ({graphData}) => {
         }}
         >
         <CartesianGrid strokeDasharray="3 3" />
-        {/* 'time' refers to the timestamp, 'usedMem refers to the memory recorded at this' */}
+        {/* 'time' refers to the timestamp, 'usedMem refers to the memory recorded at this time, same applies for systemTime, userTime' */}
         <XAxis dataKey="time" />
         <YAxis />
         <Tooltip />

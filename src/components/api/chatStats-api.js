@@ -1,7 +1,7 @@
 import axios from 'axios';
 import FrameworkChoice from '../frameworkChoice'
 
-export const baseIP = "135.123.64.84"
+export const baseIP = "135.123.73.23"
 export const port = "8001"
 
 // export const expressPort = 8001;
@@ -61,6 +61,12 @@ const config = {
   export const getChatParameters = async () => {
     return await axios.get(
       `http://${baseIP}:${port}/getChatParameters`
+    )
+  };
+
+  export const resetChatStats = async () => {
+    return await axios.get(
+      `http://${baseIP}:${port}/resetStats`
     )
   };
 

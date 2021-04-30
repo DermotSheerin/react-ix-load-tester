@@ -3,3 +3,10 @@
     background-color: black;
     color: white;
   }
+
+.text-highlight {
+  background-color: yellow;
+  color: black;
+  padding: 10px;
+  margin: 10px;
+}

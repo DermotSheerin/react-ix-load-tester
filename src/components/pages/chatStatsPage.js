@@ -6,9 +6,8 @@ import WebsocketStats from "../websocketStats";
 
 
 const ChatStatsPage = () => {
-  // retrieve chatStats retrieved from the server using SocketIO
+  // retrieve chatStats received from the server using SocketIO
   const [chatStats, graphData] = WebsocketStats();
-
 
 
     return chatStats ?   (

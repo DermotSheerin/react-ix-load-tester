@@ -18,16 +18,10 @@ const WebsocketStats = () => {
     const socket = socketIOClient(ENDPOINT);
     socket.on("FromAPI", data => {
       setChatStats(data);
-      // currentData will grab the current value stored in state when this callback is invoked, I then append this array each time with updated memory values
+      // currentData will grab the current value stored in state when this callback is invoked, I then append this array each time with updated resource values
       setGraphData( (currentData) => [
         ...currentData, data.graphData
       ]);
-      // setUserTime( (currentData1) => [
-      //   ...currentData1, data.userTimeGraph
-      // ]);
-      // setSystemTime( (currentData2) => [
-      //   ...currentData2, data.systemTimeGraph
-      // ]);
     });
     // the logic for cleaning up timers and listeners in JavaScript is paramount to avoid memory leaks in the frontend. We need also to close the connection when the component disappears from the DOM. To do so, we return a function from useEffect, with a call to disconnect() on the client
     return () => {

@@ -25,14 +25,9 @@ const SiteHeader = () => {
           </li>
           <li className="nav-item">
             <Link className="nav-link text-white" to="/">
-              ChatStats
+              Chat Statistics
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link text-white" to="/resourceChart">
-              Resource Chart
-            </Link>
-          </li>    
+          </li> 
         </ul>
       </nav>
     </nav>
