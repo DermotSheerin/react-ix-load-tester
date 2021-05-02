@@ -12,15 +12,15 @@ const ChatParameters = ({chatParameters}) => {
   const [chatSendMax, setChatSendMax] = useState(chatParameters.data.chatSendMax);
   const [firstMsgSendDelay, setFirstMsgSendDelay] = useState(chatParameters.data.firstMsgSendDelay);
   const [respondMsgDelay, setRespondMsgDelay] = useState(chatParameters.data.respondMsgDelay);
-  const [delayBetweenLoops, setDelayBetweenLoops] = useState(chatParameters.data.delayBetweenLoops);
   const [agentJoinTimeout, setAgentJoinTimeout] = useState(chatParameters.data.agentJoinTimeout);
+  // const [delayBetweenLoops, setDelayBetweenLoops] = useState(chatParameters.data.delayBetweenLoops);
   //const [agentSendsBye, setAgentSendsBye] = useState(chatParameters.data.agentSendsBye);
   // const [customerMsgText, setCustomerMsgText] = useState("");
   // const [customerBye, setCustomerBye] = useState("");
 
   const { register, handleSubmit, errors, reset } = useForm();
 
-  // using custom error hook to store, add and clear login authentication errors
+// using custom error hook to store, add and clear login authentication errors
 //   const [error, addError, clearError] = useError();
 //   const setLoginError = (newError) => addError(newError);
 //   const clearLoginError = () => clearError();
@@ -38,14 +38,13 @@ const ChatParameters = ({chatParameters}) => {
 
   const onSubmit = async () => {
     const data = {concurrentCallers:concurrentCallers, chatSendMax:chatSendMax,firstMsgSendDelay:firstMsgSendDelay,respondMsgDelay:respondMsgDelay,
-      delayBetweenLoops: delayBetweenLoops, agentJoinTimeout:agentJoinTimeout }
+      agentJoinTimeout:agentJoinTimeout }
     changeChatParameters(data)
-    console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, delayBetweenLoops, agentJoinTimeout)
+    console.log(concurrentCallers, chatSendMax, firstMsgSendDelay, respondMsgDelay, agentJoinTimeout)
   }
 
   return (
     <>
-    {/* <FrameworkChoice></FrameworkChoice> */}
         <form
           className="form bg-dark text-light table-space"
           onSubmit={handleSubmit(onSubmit)}
@@ -159,7 +158,7 @@ const ChatParameters = ({chatParameters}) => {
               })}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>
               Delay between Chat Flow Loops (ms)
             </label>
@@ -179,7 +178,7 @@ const ChatParameters = ({chatParameters}) => {
                 },
               })}
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label>
               Timeout for Agent Join (ms)
@@ -239,7 +238,7 @@ const ChatParameters = ({chatParameters}) => {
             <button type="submit" className="btn-lg btn-primary btn-block">
               Submit
             </button>
-            <button
+            {/* <button
               type="reset"
               className="btn-sm btn-secondary btn-block"
               onClick={() => {
@@ -250,7 +249,7 @@ const ChatParameters = ({chatParameters}) => {
               }}
             >
               Reset
-            </button>
+            </button> */}
           </div>
         </form>
     </>
