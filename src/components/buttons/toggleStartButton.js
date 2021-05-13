@@ -18,12 +18,11 @@
 //     () => {
 //     window.localStorage.setItem("isToggled", isToggled)
 //   }, [isToggled])
-  
+
 //   const handleClick = () => {
 //     setToggled(!isToggled);
-//     toggleStart(!isToggled) 
+//     toggleStart(!isToggled)
 //   }
-
 
 //   return (
 //     <button className="btn w-10 btn-secondary" onClick={handleClick}>

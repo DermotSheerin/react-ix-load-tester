@@ -3,10 +3,10 @@ import { getChatParameters } from "../api/chatStats-api";
 
 const useChatParameters = () => {
   const [chatParameters, setChatParameters] = useState(null);
-  
+
   useEffect(() => {
     getChatParameters().then((chatParameters) => {
-        setChatParameters(chatParameters);
+      setChatParameters(chatParameters);
     });
   }, []);
   return [chatParameters, setChatParameters];

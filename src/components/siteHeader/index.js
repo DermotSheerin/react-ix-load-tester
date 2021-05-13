@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./siteHeader.css";
 
-
 const SiteHeader = () => {
-
-
   return (
     <nav className="navbar  navbar-light fixed-top  bg-dark ">
       <nav className="navbar-brand text-white">
@@ -15,10 +12,10 @@ const SiteHeader = () => {
           IX Chat Generator
         </Link>
       </nav>
-      
+
       <nav className="navbar navbar-expand ">
         <ul className="navbar-nav">
-        <li className="nav-item">
+          <li className="nav-item">
             <Link className="nav-link text-white" to="/chatParameters">
               Chat Parameters
             </Link>
@@ -27,7 +24,7 @@ const SiteHeader = () => {
             <Link className="nav-link text-white" to="/">
               Chat Statistics
             </Link>
-          </li> 
+          </li>
         </ul>
       </nav>
     </nav>

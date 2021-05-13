@@ -1,9 +1,9 @@
 .table-space {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-family: "Comic Sans MS";
-    padding: 15px;
-  }
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: "Comic Sans MS";
+  padding: 15px;
+}
 
 .red-highlight {
   color: white;
@@ -17,13 +17,12 @@
 
 .table-highlight {
   color: white;
-  background:  #3c598c;
-
+  background: #3c598c;
 }
 
 .flex {
   display: flex;
-  justify-content: space-between 
+  justify-content: space-between;
 }
 
 /* .blink_me {
@@ -37,12 +36,14 @@
 } */
 
 @keyframes blink {
-  to { background: red; }
+  to {
+    background: red;
   }
+}
 
-  .blink_me {
-    animation-duration: 2s;
-    animation-name: blink;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-  }
+.blink_me {
+  animation-duration: 2s;
+  animation-name: blink;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}

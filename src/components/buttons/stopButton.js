@@ -2,10 +2,9 @@ import React from "react";
 import { stopTest } from "../api/chatStats-api";
 
 const StopButton = () => {
-
   const handleClick = () => {
-    stopTest()
-  }
+    stopTest();
+  };
 
   return (
     <button className="btn w-10 btn-secondary" onClick={handleClick}>
