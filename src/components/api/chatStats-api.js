@@ -1,5 +1,5 @@
 import axios from "axios";
-import FrameworkChoice from "../frameworkChoice";
+// import FrameworkChoice from "../frameworkChoice";
 
 export const baseIP = "10.134.45.26";
 export const port = "8001";
