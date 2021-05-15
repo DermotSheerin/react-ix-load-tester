@@ -1,7 +1,7 @@
 import axios from "axios";
 import FrameworkChoice from "../frameworkChoice";
 
-export const baseIP = "135.123.64.47";
+export const baseIP = "10.134.45.26";
 export const port = "8001";
 
 // export const expressPort = 8001;
@@ -16,27 +16,6 @@ const config = {
     "Content-Type": "application/json",
   },
 };
-
-// export const getStats = async () => {
-//   return await axios.get(
-//     `http://localhost:3000/getStats`
-//   )
-// };
-
-// export const getStats = () => {
-//   return fetch(
-//     `http://localhost:3000/getStats`
-//   )
-//     .then((res) => res.json())
-//     .then((json) => json.results);
-// };
-
-// removed and now using websockets via socket.io
-// export const getStats = async () => {
-//   return await axios.get(
-//     `http://${baseIP}:${port}/getStats`
-//   )
-// };
 
 export const startTest = async () => {
   return await axios.get(`http://${baseIP}:${port}/startTest`);

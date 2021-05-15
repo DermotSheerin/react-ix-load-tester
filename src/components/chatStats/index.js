@@ -8,23 +8,6 @@ import ResourceChart from "../resourceChart";
 //import ToggleStartButton from "../buttons/toggleStartButton";
 
 const ChatStats = ({ chatStats, graphData }) => {
-  //   // Get the previous value (was passed into hook on last render)
-  //   const prevCount = usePrevious(chatStats.resourceStats.usedMem[1]);
-  //   console.log(`here is prevCount ${prevCount} and here is prop ${chatStats.resourceStats.usedMem[1]}`)
-
-  //   // Hook
-  // function usePrevious(value) {
-  //   // The ref object is a generic container whose current property is mutable ...
-  //   // ... and can hold any value, similar to an instance property on a class
-  //   const ref = useRef();
-  //   // Store current value in ref
-  //   useEffect(() => {
-  //     ref.current = value;
-  //   }, [value]); // Only re-run if value changes
-  //   // Return previous value (happens before update in useEffect above)
-  //   return ref.current;
-  // }
-
   return (
     <>
       <div>
@@ -106,24 +89,19 @@ const ChatStats = ({ chatStats, graphData }) => {
 
 export default ChatStats;
 
-// return chatStats &&   (
-//   <div>
-// <Table responsive="sm" size="sm">
-//       <thead>
-//       <tr>
-//       {Object.entries(chatStats).map(([key, value]) =>
-//           <th scope="col">{key}</th>
-//       )}
-//       </tr>
-//       </thead>
-//       <tbody>
-//         <tr>
-//         {Object.entries(chatStats).map(([key, value]) =>
-//           <td>{value}</td>
-//           )}
-//         </tr>
+//   // Get the previous value (was passed into hook on last render)
+//   const prevCount = usePrevious(chatStats.resourceStats.usedMem[1]);
+//   console.log(`here is prevCount ${prevCount} and here is prop ${chatStats.resourceStats.usedMem[1]}`)
 
-//       </tbody>
-//     </Table>
-//     </div>
-// )
+//   // Hook
+// function usePrevious(value) {
+//   // The ref object is a generic container whose current property is mutable ...
+//   // ... and can hold any value, similar to an instance property on a class
+//   const ref = useRef();
+//   // Store current value in ref
+//   useEffect(() => {
+//     ref.current = value;
+//   }, [value]); // Only re-run if value changes
+//   // Return previous value (happens before update in useEffect above)
+//   return ref.current;
+// }

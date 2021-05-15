@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { changeChatParameters } from "../api/chatStats-api";
 import "./index.css";
-//import useChangeChatParameters from "../hooks/useChangeChatParameters"
-//import useChatParameters from '../hooks/useChatParameters'
 
 const ChatParameters = ({ chatParameters }) => {
   const [framework] = useState(chatParameters.data.framework);
@@ -24,20 +22,7 @@ const ChatParameters = ({ chatParameters }) => {
   );
   const [isLoading, setIsLoading] = useState(false);
 
-  // const [delayBetweenLoops, setDelayBetweenLoops] = useState(chatParameters.data.delayBetweenLoops);
-  //const [agentSendsBye, setAgentSendsBye] = useState(chatParameters.data.agentSendsBye);
-  // const [customerMsgText, setCustomerMsgText] = useState("");
-  // const [customerBye, setCustomerBye] = useState("");
-
   const { register, handleSubmit, errors, reset } = useForm();
-
-  // using custom error hook to store, add and clear login authentication errors
-  //   const [error, addError, clearError] = useError();
-  //   const setLoginError = (newError) => addError(newError);
-  //   const clearLoginError = () => clearError();
-
-  // had to add this here (and in LoginPage) otherwise when a user (a) was redirected to login for accessing a protected page (b) then logged in successfully - they did not get directed to the original page they were trying to access
-  //const { from } = user.location.state || { from: { pathname: "/" } };
 
   const onSubmit = async () => {
     // set loader to true on submission
@@ -270,3 +255,11 @@ const ChatParameters = ({ chatParameters }) => {
 };
 
 export default ChatParameters;
+
+// using custom error hook to store, add and clear login authentication errors
+//   const [error, addError, clearError] = useError();
+//   const setLoginError = (newError) => addError(newError);
+//   const clearLoginError = () => clearError();
+
+// had to add this here (and in LoginPage) otherwise when a user (a) was redirected to login for accessing a protected page (b) then logged in successfully - they did not get directed to the original page they were trying to access
+//const { from } = user.location.state || { from: { pathname: "/" } };

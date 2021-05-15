@@ -5,8 +5,6 @@ import { baseIP, port } from "../api/chatStats-api";
 const WebsocketStats = () => {
   const [chatStats, setChatStats] = useState("");
   const [graphData, setGraphData] = useState([]);
-  // const [userTime, setUserTime] = useState([]);
-  // const [systemTime, setSystemTime] = useState([]);
 
   // retrieve SUT IP and Port from chatStats-api
   const ENDPOINT = `http://${baseIP}:${port}/`;
